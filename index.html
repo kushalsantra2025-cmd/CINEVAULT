@@ -231,7 +231,7 @@ async function play(v){
   const btn=document.querySelector(`[data-play="${CSS.escape(v.id)}"]`);if(btn){btn.disabled=true;btn.textContent="Loading…"}
   try{
     const {data,error}=await sb.storage.from(BUCKET).createSignedUrl(v.object_path,3600);if(error)throw error;
-    const video=document.createElement("video");video.controls=true;video.playsInline=true;video.preload="metadata";video.setAttribute("controlsList","nodownload noplaybackrate");video.disablePictureInPicture=true;video.src=data.signedUrl;
+    const video=document.createElement("video");video.controls=true;video.playsInline=true;video.preload="metadata";video.setAttribute("controlsList","nodownload noplaybackrate noremoteplayback");video.disablePictureInPicture=true;video.disableRemotePlayback=true;video.src=data.signedUrl;
     video.addEventListener("contextmenu",e=>e.preventDefault());video.onerror=()=>msg("libraryMsg","ভিডিও চালানো যায়নি। Storage policy ও ফাইল পরীক্ষা করো।","error");
     $("largePlayerTitle").textContent=v.title||"Now playing";$("largePlayerHost").replaceChildren(video);$("largePlayerPanel").classList.remove("hidden");
     await recordView(v);await loadEngagement(v);
@@ -286,9 +286,9 @@ $("customerTab").addEventListener("click",()=>setMode("customer"));$("adminTab")
 $("customerLoginBtn").addEventListener("click",()=>auth("customer"));$("adminLoginBtn").addEventListener("click",()=>auth("admin"));$("signupBtn").addEventListener("click",()=>auth("signup"));
 $("logoutBtn").addEventListener("click",()=>sb?.auth.signOut());$("uploadBtn").addEventListener("click",upload);$("refreshBtn").addEventListener("click",loadVideos);
 $("password").addEventListener("keydown",e=>{if(e.key==="Enter")auth(loginMode)});
-$("dislikeBtn").addEventListener("click",async()=>{if(!activeVideo)return;const {data}=await sb.from("video_engagements").select("reaction").eq("video_id",activeVideo.id).eq("user_id",currentUser.id).maybeSingle();await saveReaction(data?.reaction==="dislike"?null:"dislike",undefined)});
-$("likeBtn").onclick=async()=>{if(!activeVideo)return;const {data}=await sb.from("video_engagements").select("reaction").eq("video_id",activeVideo.id).eq("user_id",currentUser.id).maybeSingle();await saveReaction(data?.reaction==="like"?null:"like",undefined)};
-$("favoriteBtn").addEventListener("click",async()=>{if(!activeVideo)return;const {data}=await sb.from("video_engagements").select("is_favorite").eq("video_id",activeVideo.id).eq("user_id",currentUser.id).maybeSingle();await saveReaction(undefined,!data?.is_favorite)});
+$("dislikeBtn").addEventListener("click",async()=>{if(!activeVideo)return;const {data,error}=await sb.from("video_engagements").select("reaction").eq("video_id",activeVideo.id).eq("user_id",currentUser.id).maybeSingle();if(error){$("commentMsg").textContent=error.message;return}await saveReaction(data?.reaction==="dislike"?null:"dislike",undefined)});
+$("likeBtn").onclick=async()=>{if(!activeVideo)return;const {data,error}=await sb.from("video_engagements").select("reaction").eq("video_id",activeVideo.id).eq("user_id",currentUser.id).maybeSingle();if(error){$("commentMsg").textContent=error.message;return}await saveReaction(data?.reaction==="like"?null:"like",undefined)};
+$("favoriteBtn").addEventListener("click",async()=>{if(!activeVideo)return;const {data,error}=await sb.from("video_engagements").select("is_favorite").eq("video_id",activeVideo.id).eq("user_id",currentUser.id).maybeSingle();if(error){$("commentMsg").textContent=error.message;return}await saveReaction(undefined,!data?.is_favorite)});
 $("commentForm").addEventListener("submit",async e=>{e.preventDefault();if(!activeVideo)return;const comment=$("commentInput").value.trim();if(!comment)return;$("commentMsg").textContent="Posting…";const {error}=await sb.from("video_comments").insert({video_id:activeVideo.id,user_id:currentUser.id,comment});if(error){$("commentMsg").textContent=error.message;return}$("commentInput").value="";$("commentMsg").textContent="Comment posted";await loadEngagement(activeVideo)});
 init();
 </script>
