@@ -7,7 +7,7 @@
 <title>Private Vault — Admin & Customer</title>
 <style>
 :root{color-scheme:dark;--bg:#08090d;--panel:#12141d;--line:#2b2e3d;--text:#f4f5f8;--muted:#a1a6b6;--accent:#c4b5fd;--accent2:#8b5cf6;--danger:#fb7185;--ok:#34d399}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#24183d 0,#08090d 52%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:750;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#100b1d}button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:#252837;color:#f4f5f8;border:1px solid #383c4e}.danger{background:#3a1d29;color:#fecdd3;border:1px solid #673043}.wrap{max-width:1120px;margin:auto;padding:22px 16px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.logo{width:45px;height:45px;border-radius:15px;background:linear-gradient(135deg,#ddd6fe,#7c3aed);display:grid;place-items:center;color:#100b1d;font-size:22px;font-weight:900;box-shadow:0 8px 35px #8b5cf633}.brand h1{font-size:20px;margin:0}.brand p{color:var(--muted);margin:2px 0 0;font-size:12px}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:12px}.card{background:linear-gradient(145deg,#151722f2,#10121af5);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 18px 60px #0003}.auth{max-width:490px;margin:5vh auto}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:800}.heading{font-size:clamp(24px,5vw,30px);line-height:1.15;margin:8px 0}.muted{color:var(--muted)}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:13px;color:#c8cbd6}.field input{width:100%;border:1px solid #383c4e;background:#090b11;color:var(--text);border-radius:12px;padding:12px 13px;outline:none}.field input:focus{border-color:var(--accent)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.status{padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:#10121a;color:#cbd0dc;margin:12px 0;white-space:pre-wrap;overflow-wrap:anywhere}.status.error{border-color:#673043;color:#fecdd3}.status.good{border-color:#1d5b49;color:#a7f3d0}.hidden{display:none!important}.role-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}.role-tabs button{background:#20232e;color:#d7d9e3;border:1px solid #343849}.role-tabs button.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#100b1d;border-color:transparent}.note{font-size:12px;color:var(--muted);margin-top:12px}.hero{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin:24px 0}.hero h2{font-size:clamp(26px,5vw,38px);margin:5px 0}.hero p{margin:0;color:var(--muted)}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.upload{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-bottom:24px}.drop{border:1px dashed #655b88;border-radius:16px;padding:22px;text-align:center;background:#17132666}.drop .symbol{font-size:30px}.drop p{margin:5px 0 14px;color:var(--muted);font-size:13px}.section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:22px 0 14px}.section-title h3{margin:0;font-size:19px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.video-card{min-width:0;overflow:hidden;padding:0}.thumb{width:100%;aspect-ratio:16/9;background:#05060a;display:grid;place-items:center;color:#777d8d;overflow:hidden}.thumb video{width:100%;height:100%;object-fit:contain;background:#05060a}.play-placeholder{font-size:34px}.video-info{padding:14px}.video-info h4{margin:0 0 5px;font-size:15px;overflow-wrap:anywhere}.meta{font-size:12px;color:var(--muted);margin-bottom:12px}.video-actions{display:flex;gap:8px;flex-wrap:wrap}.video-actions button{padding:8px 10px;font-size:12px}.empty{text-align:center;padding:38px 15px;color:var(--muted);border:1px dashed var(--line);border-radius:18px}.empty strong{display:block;color:var(--text);font-size:17px;margin-bottom:5px}.foot{text-align:center;color:#6f7483;font-size:12px;margin-top:30px}.small{font-size:12px;color:var(--muted)}@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.upload{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}.top{align-items:flex-start}.card{padding:16px}}@media(max-width:430px){.wrap{padding:15px 11px 35px}.grid{grid-template-columns:1fr}.actions{grid-template-columns:1fr}.top .pill{display:none}}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#24183d 0,#08090d 52%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:750;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#100b1d}button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:#252837;color:#f4f5f8;border:1px solid #383c4e}.danger{background:#3a1d29;color:#fecdd3;border:1px solid #673043}.wrap{max-width:1120px;margin:auto;padding:22px 16px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.logo{width:45px;height:45px;border-radius:15px;background:linear-gradient(135deg,#ddd6fe,#7c3aed);display:grid;place-items:center;color:#100b1d;font-size:22px;font-weight:900;box-shadow:0 8px 35px #8b5cf633}.brand h1{font-size:20px;margin:0}.brand p{color:var(--muted);margin:2px 0 0;font-size:12px}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:12px}.card{background:linear-gradient(145deg,#151722f2,#10121af5);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 18px 60px #0003}.auth{max-width:490px;margin:5vh auto}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:800}.heading{font-size:clamp(24px,5vw,30px);line-height:1.15;margin:8px 0}.muted{color:var(--muted)}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:13px;color:#c8cbd6}.field input{width:100%;border:1px solid #383c4e;background:#090b11;color:var(--text);border-radius:12px;padding:12px 13px;outline:none}.field input:focus{border-color:var(--accent)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.status{padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:#10121a;color:#cbd0dc;margin:12px 0;white-space:pre-wrap;overflow-wrap:anywhere}.status.error{border-color:#673043;color:#fecdd3}.status.good{border-color:#1d5b49;color:#a7f3d0}.hidden{display:none!important}.role-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}.role-tabs button{background:#20232e;color:#d7d9e3;border:1px solid #343849}.role-tabs button.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#100b1d;border-color:transparent}.note{font-size:12px;color:var(--muted);margin-top:12px}.hero{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin:24px 0}.hero h2{font-size:clamp(26px,5vw,38px);margin:5px 0}.hero p{margin:0;color:var(--muted)}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.upload{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-bottom:24px}.drop{border:1px dashed #655b88;border-radius:16px;padding:22px;text-align:center;background:#17132666}.drop .symbol{font-size:30px}.drop p{margin:5px 0 14px;color:var(--muted);font-size:13px}.section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:22px 0 14px}.section-title h3{margin:0;font-size:19px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.video-card{min-width:0;overflow:hidden;padding:0}.thumb{width:100%;aspect-ratio:16/9;background:#05060a;display:grid;place-items:center;color:#777d8d;overflow:hidden}.thumb video{width:100%;height:100%;object-fit:contain;background:#05060a}.large-player{margin:0 0 22px;padding:16px}.large-player video{display:block;width:100%;max-height:78vh;aspect-ratio:16/9;object-fit:contain;background:#000;border-radius:14px}.player-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.player-head h3{margin:0;overflow-wrap:anywhere}.play-placeholder{font-size:34px}.video-info{padding:14px}.video-info h4{margin:0 0 5px;font-size:15px;overflow-wrap:anywhere}.meta{font-size:12px;color:var(--muted);margin-bottom:12px}.video-actions{display:flex;gap:8px;flex-wrap:wrap}.video-actions button{padding:8px 10px;font-size:12px}.empty{text-align:center;padding:38px 15px;color:var(--muted);border:1px dashed var(--line);border-radius:18px}.empty strong{display:block;color:var(--text);font-size:17px;margin-bottom:5px}.foot{text-align:center;color:#6f7483;font-size:12px;margin-top:30px}.small{font-size:12px;color:var(--muted)}@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.upload{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}.top{align-items:flex-start}.card{padding:16px}}@media(max-width:430px){.wrap{padding:15px 11px 35px}.grid{grid-template-columns:1fr}.actions{grid-template-columns:1fr}.top .pill{display:none}}
 </style>
 </head>
 <body>
@@ -16,13 +16,18 @@
 <section id="authView" class="card auth">
   <div class="eyebrow">Secure access</div><h2 class="heading">তোর Private Video Space</h2>
   <p class="muted">Admin ভিডিও পোস্ট করবে, আর লগইন করা Customer-রা ভিডিও দেখতে পারবে।</p>
-  <div class="role-tabs"><button type="button" id="adminTab" class="active">Admin Login</button><button type="button" id="customerTab">Customer Login</button></div>
+  <div class="role-tabs"><button type="button" id="customerTab" class="active">Customer Login</button><button type="button" id="adminTab">Admin Login</button></div>
   <div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="username" placeholder="you@example.com"></div>
   <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="কমপক্ষে ৮ অক্ষর"></div>
-  <div class="actions hidden" id="customerActions"><button id="customerLoginBtn">Customer Login</button><button id="signupBtn" class="secondary">Create Customer Account</button></div>
-  <div class="actions" id="adminActions"><button id="adminLoginBtn">Admin Login</button></div>
+  <div class="actions" id="customerActions"><button id="customerLoginBtn">Customer Login</button><button id="signupBtn" class="secondary">Create Customer Account</button></div>
+  <div class="actions hidden" id="adminActions"><button id="adminLoginBtn">Admin Login</button></div>
+  <div id="otpPanel" class="hidden">
+    <div class="field"><label for="signupCode">Email verification code</label><input id="signupCode" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="ইমেইলে আসা কোড লিখো"></div>
+    <div class="actions"><button type="button" id="verifyCodeBtn">Verify code & Create Account</button><button type="button" id="resendCodeBtn" class="secondary">Resend code</button></div>
+    <p class="note">কোডটি ইমেইলে আসবে। কোড যাচাই না হওয়া পর্যন্ত অ্যাকাউন্টে ঢোকা যাবে না।</p>
+  </div>
   <div id="authMsg" class="status hidden" role="status"></div>
-  <p class="note">Admin Login আগে দেখানো হচ্ছে। Admin হিসেবে ঢুকতে হলে Supabase profiles টেবিলে তোমার user-এর role = admin থাকতে হবে। Customer account আলাদা Customer Login থেকে তৈরি করা যাবে। Admin role এই পেজের public signup দিয়ে তৈরি করা যায় না।</p>
+  <p class="note">প্রথমে Customer account তৈরি করো। তারপর Supabase SQL Editor-এ Admin email অনুমোদন করো। Admin role কখনো এই পেজ থেকে public signup দিয়ে তৈরি করা যায় না।</p>
 </section>
 <main id="appView" class="hidden">
   <div class="hero"><div><div class="eyebrow" id="roleEyebrow">Private library</div><h2 id="welcomeTitle">Video Library</h2><p id="welcomeText">Admin-এর প্রকাশিত ভিডিওগুলো এখানে থাকবে।</p></div><div class="row"><span id="userPill" class="pill"></span><button id="logoutBtn" class="secondary">Log out</button></div></div>
@@ -35,6 +40,7 @@
     <div class="card"><div class="eyebrow">Access control</div><h3 style="margin:5px 0 10px">Private video access</h3><p class="muted">ভিডিও private storage-এ থাকবে। Database policy Admin-এর upload/delete এবং Customer-এর published video access নিয়ন্ত্রণ করবে।</p><div class="status">🔐 Private Storage<br>🛡️ Row-level security<br>⏱️ Temporary playback URL<br>👤 Admin-only publishing</div></div>
   </section>
   <div class="section-title"><h3 id="libraryTitle">Published videos</h3><button id="refreshBtn" class="secondary">Refresh</button></div>
+  <section id="largePlayerPanel" class="card large-player hidden" aria-label="Video player"><div class="player-head"><h3 id="largePlayerTitle">Now playing</h3><button id="closePlayerBtn" type="button" class="secondary">Close player ✕</button></div><div id="largePlayerHost"></div></section>
   <div id="library" class="grid"></div><div id="emptyState" class="empty hidden"><strong>এখনও কোনো ভিডিও পোস্ট হয়নি</strong>অ্যাডমিন ভিডিও পোস্ট করলে এখানে দেখা যাবে।</div><div id="libraryMsg" class="status hidden" role="status"></div>
 </main>
 <footer class="foot">PRIVATE VAULT · Admin & Customer Portal</footer>
@@ -47,7 +53,8 @@
 */
 const SUPABASE_URL = "https://ebkafmsxewtpuqbatrhr.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_mF93VTjEWaaC9EvL5Cb9Ng_GYjQeeR7";
-const BUCKET = "private-videos", MAX_BYTES = 50 * 1024 * 1024;  let sb = null, currentUser = null, currentRole = null, loginMode = "admin", videosCache = [];
+const BUCKET = "private-videos", MAX_BYTES = 500 * 1024 * 1024;
+let sb = null, currentUser = null, currentRole = null, loginMode = "customer", videosCache = [], pendingSignupEmail = "", pendingSignupPassword = "";
 const $ = id => document.getElementById(id);
 function msg(id,text,type=""){const e=$(id);e.textContent=text;e.className="status"+(type?" "+type:"");e.classList.remove("hidden")}
 function hide(id){$(id).classList.add("hidden")}
@@ -80,15 +87,39 @@ async function auth(mode){
   ["customerLoginBtn","adminLoginBtn","signupBtn"].forEach(id=>$(id).disabled=true);
   try{
     if(mode==="signup"){
-      const {data,error}=await sb.auth.signUp({email,password});if(error)throw error;
+      const {data,error}=await sb.auth.signUp({email,password,options:{data:{account_type:"customer"}}});if(error)throw error;
       if(data.session&&data.user){await finishLogin(data.user,"customer")}
-      else msg("authMsg","Customer account তৈরি হয়েছে। Email confirmation চালু থাকলে inbox থেকে confirm করে Customer Login করো।","good");
+      else {
+        pendingSignupEmail=email;pendingSignupPassword=password;
+        $("otpPanel").classList.remove("hidden");
+        msg("authMsg","তোর ইমেইলে ৬ সংখ্যার verification code পাঠানো হয়েছে। Inbox/Spam দেখে কোডটা এখানে লিখে Verify কর।","good");
+      }
     }else{
       const {data,error}=await sb.auth.signInWithPassword({email,password});if(error)throw error;
       await finishLogin(data.user,mode);
     }
   }catch(e){msg("authMsg",e.message||"Login failed","error")}
   finally{["customerLoginBtn","adminLoginBtn","signupBtn"].forEach(id=>$(id).disabled=false)}
+}
+async function verifySignupCode(){
+  hide("authMsg");const token=$("signupCode").value.trim();
+  if(!pendingSignupEmail)return msg("authMsg","আগে Create Customer Account চাপো।","error");
+  if(!/^\d{6}$/.test(token))return msg("authMsg","ইমেইলে আসা ৬ সংখ্যার কোড লিখো।","error");
+  $("verifyCodeBtn").disabled=true;
+  try{
+    const {data,error}=await sb.auth.verifyOtp({email:pendingSignupEmail,token,type:"signup"});if(error)throw error;
+    pendingSignupEmail="";pendingSignupPassword="";$("otpPanel").classList.add("hidden");
+    if(data.user)await finishLogin(data.user,"customer");
+    else msg("authMsg","কোড যাচাই হয়েছে। এবার Customer Login করো।","good");
+  }catch(e){msg("authMsg",e.message||"কোড যাচাই হয়নি।","error")}
+  finally{$("verifyCodeBtn").disabled=false}
+}
+async function resendSignupCode(){
+  if(!pendingSignupEmail)return msg("authMsg","আগে Create Customer Account চাপো।","error");
+  $("resendCodeBtn").disabled=true;
+  try{const {error}=await sb.auth.resend({type:"signup",email:pendingSignupEmail,options:{emailRedirectTo:location.origin+location.pathname}});if(error)throw error;msg("authMsg","নতুন কোড পাঠানো হয়েছে। Inbox/Spam দেখো।","good")}
+  catch(e){msg("authMsg",e.message||"কোড পাঠানো যায়নি।","error")}
+  finally{$("resendCodeBtn").disabled=false}
 }
 async function loadVideos(){
   if(!sb||!currentUser)return;
@@ -108,13 +139,18 @@ function card(v){
   return a;
 }
 async function play(v){
-  const thumb=$("thumb-"+v.id),btn=document.querySelector(`[data-play="${CSS.escape(v.id)}"]`);if(!thumb||!btn)return;btn.disabled=true;btn.textContent="Loading…";
+  const btn=document.querySelector(`[data-play="${CSS.escape(v.id)}"]`);if(!btn)return;btn.disabled=true;btn.textContent="Loading…";
   try{
     const {data,error}=await sb.storage.from(BUCKET).createSignedUrl(v.object_path,300);if(error)throw error;
-    const video=document.createElement("video");video.controls=true;video.playsInline=true;video.preload="metadata";video.src=data.signedUrl;video.style.width="100%";video.style.height="100%";video.style.objectFit="contain";video.onerror=()=>msg("libraryMsg","ভিডিও চালানো যায়নি। Storage policy ও ফাইল পরীক্ষা করো।","error");thumb.replaceChildren(video);video.play().catch(()=>{});
+    const video=document.createElement("video");video.controls=true;video.playsInline=true;video.preload="metadata";video.src=data.signedUrl;
+    video.onerror=()=>msg("libraryMsg","ভিডিও চালানো যায়নি। Storage policy ও ফাইল পরীক্ষা করো।","error");
+    $("largePlayerTitle").textContent=v.title||"Now playing";$("largePlayerHost").replaceChildren(video);$("largePlayerPanel").classList.remove("hidden");
+    $("largePlayerPanel").scrollIntoView({behavior:"smooth",block:"start"});video.play().catch(()=>{});
   }catch(e){msg("libraryMsg","ভিডিও খোলা যায়নি: "+(e.message||e),"error")}
   finally{btn.disabled=false;btn.textContent="▶ Play"}
 }
+function closeLargePlayer(){const host=$("largePlayerHost");const video=host.querySelector("video");if(video)video.pause();host.replaceChildren();$("largePlayerPanel").classList.add("hidden")}
+$("closePlayerBtn").addEventListener("click",closeLargePlayer);
 async function upload(){
   hide("uploadMsg");const file=$("videoFile").files[0],title=$("videoTitle").value.trim()||(file?file.name.replace(/\.[^.]+$/,""):"");
   if(currentRole!=="admin")return msg("uploadMsg","শুধু Admin ভিডিও পোস্ট করতে পারবে।","error");
@@ -154,6 +190,7 @@ async function init(){
 }
 $("customerTab").addEventListener("click",()=>setMode("customer"));$("adminTab").addEventListener("click",()=>setMode("admin"));
 $("customerLoginBtn").addEventListener("click",()=>auth("customer"));$("adminLoginBtn").addEventListener("click",()=>auth("admin"));$("signupBtn").addEventListener("click",()=>auth("signup"));
+$("verifyCodeBtn").addEventListener("click",verifySignupCode);$("resendCodeBtn").addEventListener("click",resendSignupCode);
 $("logoutBtn").addEventListener("click",()=>sb?.auth.signOut());$("uploadBtn").addEventListener("click",upload);$("refreshBtn").addEventListener("click",loadVideos);
 $("password").addEventListener("keydown",e=>{if(e.key==="Enter")auth(loginMode)});
 init();
