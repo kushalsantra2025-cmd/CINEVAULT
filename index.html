@@ -47,8 +47,7 @@
 */
 const SUPABASE_URL = "https://ebkafmsxewtpuqbatrhr.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_mF93VTjEWaaC9EvL5Cb9Ng_GYjQeeR7";
-const BUCKET = "private-videos", MAX_BYTES = 500 * 1024 * 1024;
-let sb = null, currentUser = null, currentRole = null, loginMode = "admin", videosCache = [];
+const BUCKET = "private-videos", MAX_BYTES = 4 * 1024 * 1024 * 1024;let sb = null, currentUser = null, currentRole = null, loginMode = "admin", videosCache = [];
 const $ = id => document.getElementById(id);
 function msg(id,text,type=""){const e=$(id);e.textContent=text;e.className="status"+(type?" "+type:"");e.classList.remove("hidden")}
 function hide(id){$(id).classList.add("hidden")}
