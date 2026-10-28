@@ -16,13 +16,13 @@
 <section id="authView" class="card auth">
   <div class="eyebrow">Secure access</div><h2 class="heading">তোর Private Video Space</h2>
   <p class="muted">Admin ভিডিও পোস্ট করবে, আর লগইন করা Customer-রা ভিডিও দেখতে পারবে।</p>
-  <div class="role-tabs"><button type="button" id="customerTab" class="active">Customer Login</button><button type="button" id="adminTab">Admin Login</button></div>
+  <div class="role-tabs"><button type="button" id="adminTab" class="active">Admin Login</button><button type="button" id="customerTab">Customer Login</button></div>
   <div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="username" placeholder="you@example.com"></div>
   <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="কমপক্ষে ৮ অক্ষর"></div>
-  <div class="actions" id="customerActions"><button id="customerLoginBtn">Customer Login</button><button id="signupBtn" class="secondary">Create Customer Account</button></div>
-  <div class="actions hidden" id="adminActions"><button id="adminLoginBtn">Admin Login</button></div>
+  <div class="actions hidden" id="customerActions"><button id="customerLoginBtn">Customer Login</button><button id="signupBtn" class="secondary">Create Customer Account</button></div>
+  <div class="actions" id="adminActions"><button id="adminLoginBtn">Admin Login</button></div>
   <div id="authMsg" class="status hidden" role="status"></div>
-  <p class="note">প্রথমে Customer account তৈরি করো। তারপর Supabase SQL Editor-এ Admin email অনুমোদন করো। Admin role কখনো এই পেজ থেকে public signup দিয়ে তৈরি করা যায় না।</p>
+  <p class="note">Admin Login আগে দেখানো হচ্ছে। Admin হিসেবে ঢুকতে হলে Supabase profiles টেবিলে তোমার user-এর role = admin থাকতে হবে। Customer account আলাদা Customer Login থেকে তৈরি করা যাবে। Admin role এই পেজের public signup দিয়ে তৈরি করা যায় না।</p>
 </section>
 <main id="appView" class="hidden">
   <div class="hero"><div><div class="eyebrow" id="roleEyebrow">Private library</div><h2 id="welcomeTitle">Video Library</h2><p id="welcomeText">Admin-এর প্রকাশিত ভিডিওগুলো এখানে থাকবে।</p></div><div class="row"><span id="userPill" class="pill"></span><button id="logoutBtn" class="secondary">Log out</button></div></div>
@@ -48,7 +48,7 @@
 const SUPABASE_URL = "PASTE_SUPABASE_PROJECT_URL_HERE";
 const SUPABASE_ANON_KEY = "PASTE_SUPABASE_PUBLISHABLE_OR_ANON_KEY_HERE";
 const BUCKET = "private-videos", MAX_BYTES = 500 * 1024 * 1024;
-let sb = null, currentUser = null, currentRole = null, loginMode = "customer", videosCache = [];
+let sb = null, currentUser = null, currentRole = null, loginMode = "admin", videosCache = [];
 const $ = id => document.getElementById(id);
 function msg(id,text,type=""){const e=$(id);e.textContent=text;e.className="status"+(type?" "+type:"");e.classList.remove("hidden")}
 function hide(id){$(id).classList.add("hidden")}
