@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090d">
+<title>Private Vault — Admin & Customer</title>
+<style>
+:root{color-scheme:dark;--bg:#08090d;--panel:#11131a;--line:#292d39;--text:#f4f5f8;--muted:#9ca3b3;--accent:#b8a1ff;--danger:#fb7185;--ok:#34d399}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#21163a 0,#08090d 48%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}button,input{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:750;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#100b1d}button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:#242735;color:#f4f5f8;border:1px solid #343849}.danger{background:#3a1d29;color:#fecdd3;border:1px solid #673043}.wrap{max-width:1100px;margin:auto;padding:22px 16px 50px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#c4b5fd,#7c3aed);display:grid;place-items:center;color:#100b1d;font-size:22px;font-weight:900;box-shadow:0 8px 35px #8b5cf633}.brand h1{font-size:20px;margin:0}.brand p{color:var(--muted);margin:2px 0 0;font-size:12px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:26px}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:12px}.card{background:linear-gradient(145deg,#141620ee,#0f1118f5);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 18px 60px #0003}.auth{max-width:470px;margin:5vh auto}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:800}.heading{font-size:28px;line-height:1.15;margin:8px 0}.muted{color:var(--muted)}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:13px;color:#c8cbd6}.field input{width:100%;border:1px solid #333747;background:#090b11;color:var(--text);border-radius:12px;padding:12px 13px;outline:none}.field input:focus{border-color:var(--accent)}.auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.auth-actions.three{grid-template-columns:1fr 1fr}.status{padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:#10121a;color:#cbd0dc;margin:12px 0;white-space:pre-wrap;overflow-wrap:anywhere}.status.error{border-color:#673043;color:#fecdd3}.status.good{border-color:#1d5b49;color:#a7f3d0}.hidden{display:none!important}.hero{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin:24px 0}.hero h2{font-size:clamp(26px,5vw,38px);margin:5px 0}.hero p{margin:0;color:var(--muted)}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.upload{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-bottom:24px}.drop{border:1px dashed #55516f;border-radius:16px;padding:22px;text-align:center;background:#17132666}.drop .symbol{font-size:30px}.drop p{margin:5px 0 14px;color:var(--muted);font-size:13px}.section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:22px 0 14px}.section-title h3{margin:0;font-size:19px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.video-card{min-width:0;overflow:hidden;padding:0}.thumb{width:100%;aspect-ratio:16/9;background:#05060a;display:grid;place-items:center;color:#777d8d;overflow:hidden}.thumb video{width:100%;height:100%;object-fit:contain;background:#05060a}.play-placeholder{font-size:34px}.video-info{padding:14px}.video-info h4{margin:0 0 5px;font-size:15px;overflow-wrap:anywhere}.meta{font-size:12px;color:var(--muted);margin-bottom:12px}.video-actions{display:flex;gap:8px;flex-wrap:wrap}.video-actions button{padding:8px 10px;font-size:12px}.empty{text-align:center;padding:38px 15px;color:var(--muted);border:1px dashed var(--line);border-radius:18px}.empty strong{display:block;color:var(--text);font-size:17px;margin-bottom:5px}.foot{text-align:center;color:#6f7483;font-size:12px;margin-top:30px}.small{font-size:12px;color:var(--muted)}.role-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}.role-tabs button{background:#20232e;color:#d7d9e3;border:1px solid #343849}.role-tabs button.active{background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#100b1d;border-color:transparent}.role-note{font-size:12px;color:var(--muted);margin-top:8px}@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.upload{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}.top{align-items:flex-start}.card{padding:16px}}@media(max-width:430px){.wrap{padding:15px 11px 35px}.grid{grid-template-columns:1fr}.auth-actions{grid-template-columns:1fr}.heading{font-size:25px}.top .pill{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="logo">▶</div><div><h1>Private Vault</h1><p>Admin publishes. Customers watch privately.</p></div></div><span class="pill">🔒 PRIVATE VIDEO PORTAL</span></header>
+
+<section id="authView" class="card auth">
+  <div class="eyebrow">Secure access</div><h2 class="heading">Welcome to your private video space.</h2>
+  <p class="muted">Admin ভিডিও পোস্ট করবে, আর লগইন করা কাস্টমাররা ভিডিও দেখবে।</p>
+  <div class="role-tabs"><button type="button" id="customerTab" class="active">Customer Login</button><button type="button" id="adminTab">Admin Login</button></div>
+  <div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="username" placeholder="you@example.com"></div>
+  <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Password (কমপক্ষে ৮ অক্ষর)"></div>
+  <div class="auth-actions" id="customerActions"><button id="customerLoginBtn">Customer Login</button><button id="signupBtn" class="secondary">Create Customer Account</button></div>
+  <div class="auth-actions hidden" id="adminActions"><button id="adminLoginBtn">Admin Login</button></div>
+  <div id="authMsg" class="status hidden" role="status"></div>
+  <p class="role-note">Admin account public signup দিয়ে তৈরি হয় না। প্রথমে Customer account তৈরি করে Supabase SQL Editor থেকে সেই email-কে Admin হিসেবে অনুমোদন করতে হবে।</p>
+</section>
+
+<main id="appView" class="hidden">
+  <div class="hero"><div><div class="eyebrow" id="roleEyebrow">Private library</div><h2 id="welcomeTitle">Video Library</h2><p id="welcomeText">Admin-এর প্রকাশিত ভিডিওগুলো এখানে থাকবে।</p></div><div class="row"><span id="userPill" class="pill"></span><button id="logoutBtn" class="secondary">Log out</button></div></div>
+  <section id="adminUpload" class="upload hidden">
+    <div class="card"><div class="eyebrow">Admin studio</div><h3 style="margin:5px 0 14px">Post a private video</h3>
+      <div class="field"><label for="videoTitle">Video title</label><input id="videoTitle" maxlength="120" placeholder="যেমন: New video"></div>
+      <div class="drop"><div class="symbol">⬆</div><p>ভিডিও ফাইল বেছে নাও। সর্বোচ্চ 500 MB।</p><input id="videoFile" type="file" accept="video/*" aria-label="Choose video file"></div>
+      <div class="row" style="margin-top:14px"><button id="uploadBtn">Publish video</button><span class="small">শুধু Admin ভিডিও পোস্ট করতে পারবে।</span></div><div id="uploadMsg" class="status hidden" role="status"></div>
+    </div>
+    <div class="card"><div class="eyebrow">Access control</div><h3 style="margin:5px 0 10px">Admin only publishing</h3><p class="muted">ভিডিওগুলো private bucket-এ থাকবে। লগইন করা customer প্রকাশিত ভিডিও দেখতে পারবে। Upload এবং delete-এর অনুমতি database policy দিয়ে যাচাই করা হয়।</p><div class="status">🔐 Private Storage<br>🛡️ Role-based RLS<br>⏱️ Temporary playback URL<br>👤 Admin-only publishing</div></div>
+  </section>
+  <div class="section-title"><h3 id="libraryTitle">Published videos</h3><button id="refreshBtn" class="secondary">Refresh</button></div>
+  <div id="library" class="grid"></div><div id="emptyState" class="empty hidden"><strong>এখনও কোনো ভিডিও পোস্ট হয়নি</strong>অ্যাডমিন ভিডিও পোস্ট করলে এখানে দেখা যাবে।</div><div id="libraryMsg" class="status hidden" role="status"></div>
+</main>
+<footer class="foot">PRIVATE VAULT · Admin & Customer Portal</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* Replace with Supabase Project URL and publishable/anon key. Never use service_role here. */
+const SUPABASE_URL = "PASTE_SUPABASE_PROJECT_URL_HERE";
+const SUPABASE_ANON_KEY = "PASTE_SUPABASE_PUBLISHABLE_OR_ANON_KEY_HERE";
+const BUCKET = "private-videos", MAX_BYTES = 500 * 1024 * 1024;
+let sb = null, currentUser = null, currentRole = null, loginMode = "customer", videosCache = [];
+const $ = id => document.getElementById(id);
+function msg(id,text,type=""){const e=$(id);e.textContent=text;e.className="status"+(type?" "+type:"");e.classList.remove("hidden")}
+function hide(id){$(id).classList.add("hidden")}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function size(n){if(!n)return"Unknown size";let i=0;const u=["B","KB","MB","GB"];while(n>=1024&&i<3){n/=1024;i++}return n.toFixed(i?1:0)+" "+u[i]}
+function date(s){try{return new Date(s).toLocaleString()}catch{return""}}
+function configured(){return SUPABASE_URL.startsWith("https://")&&!SUPABASE_URL.includes("PASTE_")&&SUPABASE_ANON_KEY.length>20&&!SUPABASE_ANON_KEY.includes("PASTE_")}
+function setMode(mode){loginMode=mode;$("customerTab").classList.toggle("active",mode==="customer");$("adminTab").classList.toggle("active",mode==="admin");$("customerActions").classList.toggle("hidden",mode!=="customer");$("adminActions").classList.toggle("hidden",mode!=="admin");hide("authMsg")}
+function showAuth(){$("authView").classList.remove("hidden");$("appView").classList.add("hidden")}
+function showApp(){$("authView").classList.add("hidden");$("appView").classList.remove("hidden")}
+async function getRole(user){const {data,error}=await sb.from("profiles").select("role").eq("id",user.id).maybeSingle();if(error)throw error;return data?.role||"customer"}
+async function finishLogin(user,expectedMode){
+  const role=await getRole(user);
+  if(expectedMode==="admin"&&role!=="admin"){await sb.auth.signOut();throw new Error("এই অ্যাকাউন্টটি Admin নয়। Supabase SQL Editor-এ admin role সেট করো।")}
+  if(expectedMode==="customer"&&role==="admin"){await sb.auth.signOut();throw new Error("এটি Admin account। Admin Login tab ব্যবহার করো।")}
+  currentUser=user;currentRole=role;showApp();
+  $("userPill").textContent=(user.email||"Account")+" · "+role.toUpperCase();
+  $("adminUpload").classList.toggle("hidden",role!=="admin");
+  $("roleEyebrow").textContent=role==="admin"?"Admin studio":"Customer library";
+  $("welcomeTitle").textContent=role==="admin"?"Admin Dashboard":"Private Video Library";
+  $("welcomeText").textContent=role==="admin"?"এখান থেকে ভিডিও পোস্ট ও মুছে ফেলতে পারবে।":"অ্যাডমিনের প্রকাশিত ভিডিওগুলো এখানে দেখো।";
+  $("libraryTitle").textContent=role==="admin"?"Your posted videos":"Published videos";
+  await loadVideos();
+}
+async function auth(mode){
+  if(!sb)return;hide("authMsg");
+  const email=$("email").value.trim(),password=$("password").value;
+  if(!email||!password)return msg("authMsg","ইমেইল ও পাসওয়ার্ড দাও।","error");
+  if(password.length<8)return msg("authMsg","পাসওয়ার্ড অন্তত ৮ অক্ষরের হওয়া দরকার।","error");
+  ["customerLoginBtn","adminLoginBtn","signupBtn"].forEach(id=>$(id).disabled=true);
+  try{
+    if(mode==="signup"){
+      const {data,error}=await sb.auth.signUp({email,password});if(error)throw error;
+      if(data.session&&data.user){await finishLogin(data.user,"customer")}
+      else msg("authMsg","Customer account তৈরি হয়েছে। ইমেইল confirmation চালু থাকলে inbox থেকে confirm করে Customer Login করো।","good");
+    }else{
+      const {data,error}=await sb.auth.signInWithPassword({email,password});if(error)throw error;
+      await finishLogin(data.user,mode);
+    }
+  }catch(e){msg("authMsg",e.message||"Login failed","error")}
+  finally{["customerLoginBtn","adminLoginBtn","signupBtn"].forEach(id=>$(id).disabled=false)}
+}
+async function loadVideos(){
+  hide("libraryMsg");$("library").innerHTML="";$("emptyState").classList.add("hidden");
+  let query=sb.from("videos").select("id,owner_id,title,object_path,mime_type,size_bytes,created_at,published").order("created_at",{ascending:false});
+  if(currentRole!=="admin")query=query.eq("published",true);
+  const {data,error}=await query;
+  if(error)return msg("libraryMsg","ভিডিও লোড হয়নি: "+error.message,"error");
+  videosCache=data||[];$("emptyState").classList.toggle("hidden",videosCache.length>0);
+  for(const v of videosCache)$("library").appendChild(card(v));
+}
+function card(v){
+ const a=document.createElement("article");a.className="card video-card";
+ a.innerHTML=`<div class="thumb" id="thumb-${v.id}"><span class="play-placeholder">▶</span></div><div class="video-info"><h4>${esc(v.title)}</h4><div class="meta">${size(v.size_bytes)} · ${date(v.created_at)}${currentRole==="admin"?"<br>"+(v.published?"Published":"Not published"):""}</div><div class="video-actions"><button data-play="${v.id}">▶ Play</button>${currentRole==="admin"?`<button class="danger" data-delete="${v.id}">Delete</button>`:""}</div></div>`;
+ a.querySelector("[data-play]").addEventListener("click",()=>play(v));
+ const del=a.querySelector("[data-delete]");if(del)del.addEventListener("click",()=>removeVideo(v));
+ return a;
+}
+async function play(v){
+ const thumb=$("thumb-"+v.id),btn=document.querySelector(`[data-play="${v.id}"]`);btn.disabled=true;btn.textContent="Loading…";
+ try{
+  const {data,error}=await sb.storage.from(BUCKET).createSignedUrl(v.object_path,300);if(error)throw error;
+  const video=document.createElement("video");video.controls=true;video.playsInline=true;video.preload="metadata";video.src=data.signedUrl;video.style.width="100%";video.style.height="100%";video.style.objectFit="contain";video.onerror=()=>msg("libraryMsg","ভিডিও চালানো যায়নি। Storage policy ও ফাইল পরীক্ষা করো।","error");thumb.replaceChildren(video);video.play().catch(()=>{});
+ }catch(e){msg("libraryMsg","ভিডিও খোলা যায়নি: "+(e.message||e),"error")}
+ finally{btn.disabled=false;btn.textContent="▶ Play"}
+}
+async function upload(){
+ hide("uploadMsg");const file=$("videoFile").files[0],title=$("videoTitle").value.trim()||(file?file.name.replace(/\.[^.]+$/,""):"");
+ if(currentRole!=="admin")return msg("uploadMsg","শুধু Admin ভিডিও পোস্ট করতে পারবে।","error");
+ if(!file)return msg("uploadMsg","একটি ভিডিও ফাইল বেছে নাও।","error");
+ if(!file.type.startsWith("video/"))return msg("uploadMsg","শুধু ভিডিও ফাইল আপলোড করা যাবে।","error");
+ if(file.size>MAX_BYTES)return msg("uploadMsg","ফাইল 500 MB-এর বেশি।","error");
+ $("uploadBtn").disabled=true;$("uploadBtn").textContent="Publishing…";
+ let rowCreated=false,id=crypto.randomUUID();
+ try{
+  const path=`${currentUser.id}/${id}/${file.name.replace(/[^\w.\-]+/g,"_").slice(-140)||"video.mp4"}`;
+  const {error:dbErr}=await sb.from("videos").insert({id,owner_id:currentUser.id,title,object_path:path,mime_type:file.type||"video/mp4",size_bytes:file.size,published:true});
+  if(dbErr)throw dbErr;rowCreated=true;
+  const {error:upErr}=await sb.storage.from(BUCKET).upload(path,file,{contentType:file.type||"video/mp4",upsert:false,cacheControl:"3600"});
+  if(upErr){await sb.from("videos").delete().eq("id",id);throw upErr}
+  msg("uploadMsg","ভিডিও সফলভাবে পোস্ট হয়েছে। Customer Login করে দেখা যাবে।","good");$("videoFile").value="";$("videoTitle").value="";await loadVideos();
+ }catch(e){if(rowCreated)await sb.from("videos").delete().eq("id",id);msg("uploadMsg","আপলোড ব্যর্থ: "+(e.message||e)+"\nSQL setup ও Private bucket ঠিক আছে কি না দেখো।","error")}
+ finally{$("uploadBtn").disabled=false;$("uploadBtn").textContent="Publish video"}
+}
+async function removeVideo(v){
+ if(currentRole!=="admin")return;
+ if(!confirm(`"${v.title}" ভিডিওটি স্থায়ীভাবে মুছে ফেলবে?`))return;
+ try{
+  const {error:se}=await sb.storage.from(BUCKET).remove([v.object_path]);if(se)throw se;
+  const {error:de}=await sb.from("videos").delete().eq("id",v.id);if(de)throw de;await loadVideos();
+ }catch(e){msg("libraryMsg","Delete ব্যর্থ: "+(e.message||e),"error")}
+}
+async function init(){
+ if(!configured()){msg("authMsg","index.html-এ SUPABASE_URL ও SUPABASE_ANON_KEY বসাও। README.txt দেখো।","error");["customerLoginBtn","adminLoginBtn","signupBtn"].forEach(id=>$(id).disabled=true);return}
+ sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+ const {data,error}=await sb.auth.getSession();if(error)msg("authMsg",error.message,"error");
+ if(data.session){try{await finishLogin(data.session.user,"any")}catch(e){await sb.auth.signOut();showAuth()}}
+ sb.auth.onAuthStateChange((event,session)=>{setTimeout(async()=>{if(session?.user){try{await finishLogin(session.user,"any")}catch(e){msg("authMsg",e.message,"error");await sb.auth.signOut();showAuth()}}else{currentUser=null;currentRole=null;showAuth()}},0)});
+}
+$("customerTab").addEventListener("click",()=>setMode("customer"));$("adminTab").addEventListener("click",()=>setMode("admin"));
+$("customerLoginBtn").addEventListener("click",()=>auth("customer"));$("adminLoginBtn").addEventListener("click",()=>auth("admin"));$("signupBtn").addEventListener("click",()=>auth("signup"));
+$("logoutBtn").addEventListener("click",()=>sb?.auth.signOut());$("uploadBtn").addEventListener("click",upload);$("refreshBtn").addEventListener("click",loadVideos);
+$("password").addEventListener("keydown",e=>{if(e.key==="Enter")auth(loginMode)});
+init();
+</script>
+</body>
+</html>
